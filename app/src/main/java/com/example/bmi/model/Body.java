@@ -1,5 +1,6 @@
 package com.example.bmi.model;
 
+
 public class Body {
     private int height;
     private int weight;
@@ -39,13 +40,15 @@ public class Body {
         float bmi =calculateBmi();
         String resultText = null;
         if (bmi < 18.5)
-            resultText = "ผอมเกินไป";
-        else if(bmi <25)
-            resultText = "น้ำหนักปกติ";
-        else if(bmi <30)
-            resultText ="อ้วน";
+            resultText = "Underweight";
+        else if(bmi > 18.5 && bmi <= 22.9)
+            resultText = "Normal";
+        else if(bmi >= 23 && bmi <= 24.9)
+            resultText = "Overweight";
+        else if(bmi >= 25 && bmi <= 29.9)
+            resultText = "Obese1";
         else
-            resultText = "อ้วนมาก";
+            resultText = "Obese2";
         return resultText;
     }
 }
